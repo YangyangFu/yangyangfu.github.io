@@ -13,6 +13,15 @@ logo_img: #LOGO_IMG_SRC_GOES_HERE | default: /assets/img/simpol-theme-square-wri
 subgreeting_one: being enthusiasitic
 subgreeting_two: being outdoorsy
 
+# Tell Github to use the kramdown markdown interpreter
+# (see https://help.github.com/articles/migrating-your-pages-site-from-maruku)
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 # Again: after inputting your content, you may need to stop and restart jekyll server for changes to take effect.
 
 #content for nav.html (shown on desktop) navigation links
