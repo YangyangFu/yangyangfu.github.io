@@ -17,6 +17,9 @@ Introduce Bellman equation for value functions
 **Some Thoughts**.
 
 1. Bellman Equation
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi(t)&space;=&space;\mathbb{E}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?>
+
 2. How to solve it theotically
 3. An example
 4. Conclusions
