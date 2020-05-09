@@ -1,0 +1,23 @@
+---
+layout:     post
+title:      "Dynamic Programming for Reinforcement Learning"
+description: "How to solve Bellman equation using dynamic programming"
+date:       2020-05-09 15:00:00
+author:     "Yangyang Fu"
+header-img: assets/img/posts/header-img/woman-typing-macbook.jpg
+
+categories:
+  - Learning/Reinforcement Learning
+---
+
+# Bellman Equation
+
+Introduce Bellman equation for value functions
+
+**Some Thoughts**.
+
+1. Bellman Equation
+2. How to solve it theotically
+3. An example
+4. Conclusions
+5. Next Step
