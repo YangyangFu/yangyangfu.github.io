@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Dynamic Programming for Reinforcement Learning"
+title:      "Bellman Equation"
 description: "How to solve Bellman equation using dynamic programming"
 date:       2020-05-09 15:00:00
 author:     "Yangyang Fu"
