@@ -3,15 +3,15 @@
   # When filling this file in, below, be sure to DELETE the "#" comments - example, greeting should look like - greeting: Hello, I'm Simpol.
 
 #content for nav.html
-title: Simpol Theme
-subtitle: Focus on the writing, the content.
+title: Yangyang Fu
+subtitle: Keep learning and laughing.
 
 #content for index.html
   #Add your own info, deleting the comments "#". This data automatically writes to the Index page's mini, about section.
-greeting: #GREETING_GOES_HERE | default: Hello, I'm Simpol.
+greeting: May the force be with you.
 logo_img: #LOGO_IMG_SRC_GOES_HERE | default: /assets/img/simpol-theme-square-writing-logo.png
-subgreeting_one: #SUBGREETING_ONE_GOES_HERE
-subgreeting_two: #SUBGREETING_TWO_GOES_HERE
+subgreeting_one: being enthusiasitic
+subgreeting_two: being outdoorsy
 
 # Again: after inputting your content, you may need to stop and restart jekyll server for changes to take effect.
 
@@ -37,7 +37,7 @@ footer_link_three_link: #FOOTER_LINK_GOES_HERE
 
 baseurl: ""
 google_tracking_id: #deletme-Google Analytics Tracking ID- UA-XXXXXXXX-X
-copyright_name: Mathson Design, LLC
+copyright_name: Yangyang Fu
 
 # SEO data (https://github.com/jekyll/jekyll-seo-tag)
 logo: /assets/img/simpol-favicon.png
@@ -50,8 +50,8 @@ author:
 social:
   name: Simpol Theme
   links:
-    - https://twitter.com/simpoltheme
-    - https://github.com/simpol-theme
+    - https://www.linkedin.com/in/yangyangfu
+    - https://github.com/yangyangfu
 
 # Build settings
 permalink: pretty
