@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
-    {% include head.html %}
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<html lang="en">
+  {% include head.html %}
+  <body>
+
     {% include nav.html %}
-    {% include header.html %}
-    {% include about.html %}
-    {% include blogs.html %}
-    {% include download.html %}
-    {% include contact.html %}
-    {% include map.html %}
+
+    <div class="main">
+
+      {{ content }}
+
+    </div>
+
     {% include footer.html %}
-    {% include js.html %}
-    </body>
+
+		{% include google-analytics.html %}
+
+  </body>
+  <!-- Simpol Theme - Download at: https://simpoltheme.com/
+        Created by, Copyright © Mathson Design, LLC and Scott Mathson -->
 </html>
