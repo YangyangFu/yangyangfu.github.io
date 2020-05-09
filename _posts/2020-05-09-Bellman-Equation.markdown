@@ -18,7 +18,11 @@ Introduce Bellman equation for value functions
 
 1. Bellman Equation
 
-equation here. <img src="https://latex.codecogs.com/gif.latex?v_\pi(t)&space;=&space;\mathbb{E}" title="v_\pi(t) = \mathbb{E}" />
+$\{ x_i \}$
+
+
+
+equation here. <img src="https://latex.codecogs.com/gif.latex?v_\pi(t)&space;=&space;\mathbb{E}" title="v_\pi(t) = \mathbb{E}" width="60" height="15" />
 
 2. How to solve it theotically
 3. An example
