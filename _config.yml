@@ -29,4 +29,4 @@ social:
 markdown: kramdown
 permalink: pretty
 
-theme: jekyll-theme-cayman
+theme: jekyll-theme-architect
