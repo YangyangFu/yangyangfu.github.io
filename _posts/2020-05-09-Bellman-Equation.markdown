@@ -70,9 +70,20 @@ Explicitly solving the Bellman optimality equation is one way to find the optima
 
 Now let's assume our system can meet all the above assumptions. 
 
-As we can see from the Bellman optimality equation, to find $v(s)$, we need to know all the values of the succedding states $s'$ after $s$, $v(s')$. Therefore, the intertwinement give us a set of equations that should be solved simultenaously. The number of equations in the set equals to the number of states, $\vert S$.
+As we can see from the Bellman optimality equation, to find $v(s)$, we need to know all the values of the succedding states $s'$ after $s$, $v(s')$. Therefore, the intertwinement give us a set of equations that should be solved simultenaously. The number of equations in the set equals to the number of states, $\vert S \vert$.
 
 More details are given in the example below to see how the set of equations can be formed.
+
+## An Example
+Here we consider a well-known recycling robot example for tutorials. The details are introduced in the book. And the book gives derivations of the optimal state value $v_{\*}(s)$.
+
+Figure summarizes all the finite states, actions, rewards and system dynamics
+
+![](2020-05-09/state-action-reward.png)
+*Figure 1. System states, actions, rewards and dynamics*
+
+![Figure 2](2020-05-09/transition-graph.png)
+*Figure 2. Transition graph of recycling robot*
 
 # to-do
 1. How to solve it theotically
