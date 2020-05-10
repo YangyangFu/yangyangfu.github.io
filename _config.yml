@@ -44,6 +44,7 @@ footer_link_two_link: "/categories"
 footer_link_three_name: #FOOTER_NAME_GOES_HERE
 footer_link_three_link: #FOOTER_LINK_GOES_HERE
 
+site_url: https://github.com/YangyangFu/yangyangfu.github.io
 baseurl: ""
 google_tracking_id: #deletme-Google Analytics Tracking ID- UA-XXXXXXXX-X
 copyright_name: Yangyang Fu
