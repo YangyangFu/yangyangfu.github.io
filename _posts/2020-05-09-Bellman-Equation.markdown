@@ -12,7 +12,7 @@ categories:
 
 # Bellman Optimality Equations
 
-Previous posts have drived the formulation for Bellman optimality equations. Bellman equations can be written in terms of state value and action value. The optimal policy can be found once we can find the optimal value functions, <img src="https://latex.codecogs.com/svg.latex?\inline&space;v_*" title="v_*" width = 50, height=30/> or <img src="https://latex.codecogs.com/svg.latex?\inline&space;q_*" title="v_*" />, which can be theoritically calculated as follows.
+Previous posts have drived the formulation for Bellman optimality equations. Bellman equations can be written in terms of state value and action value. The optimal policy can be found once we can find the optimal value functions, $$v_*$$ or <img src="https://latex.codecogs.com/svg.latex?\inline&space;q_*" title="v_*" />, which can be theoritically calculated as follows.
 
 <img src="https://latex.codecogs.com/svg.latex?\begin{align*}&space;v_*(s)&=\max_{a}\mathbb&space;E[R_{t&plus;1}&plus;\gamma&space;v_*(S_{t&plus;1})|S_t=s,A_t=a]\\&space;&=\max_a&space;\sum_{s',r}p(s',r|s,a)[r&plus;\gamma&space;v_*(s')]&space;\end{align*}" title="\begin{align*} v_*(s)&=\max_{a}\mathbb E[R_{t+1}+\gamma v_*(S_{t+1})|S_t=s,A_t=a]\\ &=\max_a \sum_{s',r}p(s',r|s,a)[r+\gamma v_*(s')] \end{align*}" />
 
