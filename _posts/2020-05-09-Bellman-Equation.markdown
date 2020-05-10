@@ -17,7 +17,7 @@ Previous posts have drived the formulation for Bellman optimality equations. Bel
 $$
 \begin{equation}
 \begin{aligned}
-v_{\*}(s) &=\max_{a}\mathbbE[R_{t+1}+\gamma v_{\*}(S_{t+1})|S_t=s,A_t=a] \\
+v_{\*}(s) &=\max_{a}\mathbb E[R_{t+1}+\gamma v_{\*}(S_{t+1})|S_t=s,A_t=a] \\
 		&=\max_{a}\sum_{a}p(s',r|s,a)[r+\gamma v_{\*}(s')] 
 \end{aligned}
 \end{equation}
@@ -31,7 +31,7 @@ q_{\*}(s,a) &= \mathbbE[R_{t+1}+\gamma \max_{a'}q_{\*}(S_{t+1},a')|S_t=s,A_t=a] 
 		&=\sum_{s',r}p(s',r|s,a)[r+\gamma \max_{a'}q_{\*}(s',a')] 
 \end{aligned}
 \end{equation}
-\tag{1}\label{eq1}
+\tag{2}\label{eq2}
 $$
 
 ## Bellman Optimality Equation vs Optimal Policy
