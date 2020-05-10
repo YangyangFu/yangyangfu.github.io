@@ -18,7 +18,7 @@ $$
 \begin{equation}
 \begin{aligned}
 v_{*}(s) &=\max_{a}\mathbb E[R_{t+1}+\gamma v_{*}(S_{t+1})|S_t=s,A_t=a] \\
-		&=\max_{a}\sum_{a}p(s',r|s,a)[r+\gamma v_{*}(s')] 
+		&=\max_{a}\sum_{a}p(s',r|s,a)[r+\gamma v_{*}(s')]
 \end{aligned}
 \end{equation}
 \tag{1}\label{eq1}
@@ -28,7 +28,7 @@ $$
 \begin{equation}
 \begin{aligned}
 q_{*}(s,a) &= \mathbb E[R_{t+1}+\gamma \max_{a'}q_{*}(S_{t+1},a')|S_t=s,A_t=a] \\
-		&=\sum_{s',r}p(s',r|s,a)[r+\gamma \max_{a'}q_{*}(s',a')] 
+		&=\sum_{s',r}p(s',r|s,a)[r+\gamma \max_{a'}q_{*}(s',a')]
 \end{aligned}
 \end{equation}
 \tag{2}\label{eq2}
@@ -39,7 +39,7 @@ $$
 The ultimate goal of RL is to find the optimal policy. But how does the Bellman optimality equation relate to the optimal policy?
 
 Once one has $v_{\*}$, it is relatively easy to determine an optimal policy. For each state $s$, there will be one or more actions at which the maximum is obtained in the Bellman optimality equation. Any policy that assigns nonzero probability only to these actions is an optimal policy. You can think of this as a one-step search. If you have the optimal value function, $v_{\*}$, then the actions that appear best after a one-step search will be optimal
-actions. 
+actions.
 
 Another way of saying this is that any policy that is greedy with respect to the
 optimal evaluation function $v_{\*}$ is an optimal policy. The term greedy is used in computer
@@ -47,7 +47,7 @@ science to describe any search or decision procedure that selects alternatives b
 on local or immediate considerations, without considering the possibility that such a
 selection may prevent future access to even better alternatives. Consequently, it describes
 policies that select actions based only on their short-term consequences. The beauty of $v_{\*}$ is that if one uses it to evaluate the short-term consequences of actions—specifically, the one-step consequences—then a greedy policy is actually optimal in the long-term sense in which we are interested because $v_{\*}$ already takes into account the reward consequences of all possible future behavior. By means of $v_{\*}$, the optimal expected long-term return is turned into a quantity that is locally and immediately available for each state. Hence, a
-one-step-ahead search yields the long-term optimal actions. 
+one-step-ahead search yields the long-term optimal actions.
 
 Having $q_{\*}$ makes choosing optimal actions even easier. With $q_{\*}$, the agent does not
 even have to do a one-step-ahead search: for any state $s$, it can simply find any action
@@ -58,7 +58,7 @@ function allows optimal actions to be selected without having to know anything
 about possible successor states and their values, that is, without having to know anything
 about the environment’s dynamics.
 
-Next, how can we solve the Bellman optimality equation theoretically and numerically? 
+Next, how can we solve the Bellman optimality equation theoretically and numerically?
 
 ## Theoretical Solutions
 
@@ -68,7 +68,7 @@ Explicitly solving the Bellman optimality equation is one way to find the optima
 - There always are sufficent computational resources.
 - The environment has Markov property.
 
-Now let's assume our system can meet all the above assumptions. 
+Now let's assume our system can meet all the above assumptions.
 
 As we can see from the Bellman optimality equation, to find $v(s)$, we need to know all the values of the succedding states $s'$ after $s$, $v(s')$. Therefore, the intertwinement give us a set of equations that should be solved simultenaously. The number of equations in the set equals to the number of states, $\vert S \vert$.
 
@@ -79,10 +79,12 @@ Here we consider a well-known recycling robot example for tutorials. The details
 
 Figure summarizes all the finite states, actions, rewards and system dynamics
 
-![](2020-05-09/state-action-reward.png)
+![]({{ site.baseurl }}/assets/img/posts/2020-05-09/state-action-reward.png)
+
 *Figure 1. System states, actions, rewards and dynamics*
 
-![](2020-05-09/transition-graph.png)
+![]({{ site.baseurl }}/assets/img/posts/2020-05-09/transition-graph.png)
+
 *Figure 2. Transition graph of recycling robot*
 
 # to-do

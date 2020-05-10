@@ -362,8 +362,8 @@ footer p {
   margin: 0 auto;
 }
 .post-header-img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 200px;
+  max-height: 200px;
 }
 .social-sharing a {
   text-decoration: none;
