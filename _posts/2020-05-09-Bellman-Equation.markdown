@@ -79,10 +79,10 @@ Here we consider a well-known recycling robot example for tutorials. The details
 
 Figure summarizes all the finite states, actions, rewards and system dynamics
 
-![](2020-05-09/state-action-reward.png)
+![](assets/img/posts/2020-05-09/state-action-reward.png)
 *Figure 1. System states, actions, rewards and dynamics*
 
-![Figure 2](2020-05-09/transition-graph.png)
+![](assets/img/posts/2020-05-09/transition-graph.png)
 *Figure 2. Transition graph of recycling robot*
 
 # to-do
