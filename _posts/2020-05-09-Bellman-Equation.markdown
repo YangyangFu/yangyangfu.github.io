@@ -64,9 +64,9 @@ Next, how can we solve the Bellman optimality equation theoretically and numeric
 
 Explicitly solving the Bellman optimality equation is one way to find the optimal policy. To guanratee the Bellman optimality equation can be directly solved, at least three assumptions need to be awared of:
 
-1. The dynamics of the environment $p(s',r|s,a)$ are accurately known.
-2. There always are sufficent computational resources.
-3. The environment has Markov property.
+- The dynamics of the environment $p(s',r \vert s,a)$ are accurately known.
+- There always are sufficent computational resources.
+- The environment has Markov property.
 
 Now let's assume our system can meet all the above assumptions. 
 
