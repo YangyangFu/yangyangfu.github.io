@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      "Reinitialization in Modelica Models"
-description: "How to reinitialize Modelica models in support of external controller"
+title:      "Thank You, Mayday"
+description: "Some thoughts"
 date:       2020-06-01 11:00:00
 author:     "Yangyang Fu"
 header-img: assets/img/posts/header-img/woman-typing-macbook.jpg
 
 categories:
-  - Experience/Modelica
+  - Life
 ---
 
 # 谢谢你们，五月天
