@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: "Hello. I'm Yangyang Fu."
 email: 'fuyy2008@gmail.com'
-description: "I'm an enthusiastic researcher on autonomous systems and machine learning techniques, having 6+ years of experiences in differentiable programming, reinforcement learning and optimal control."
+description: "I'm an enthusiastic researcher/engineer on autonomous systems and machine learning techniques, having 6+ years of experiences in differentiable programming, deep learning and optimal control. I love training neural networks for autonomy."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yangyangfu.github.io/phantom" # the base hostname & protocol for your site, e.g. https://example.com
 google_username: 'yangyangfu'
