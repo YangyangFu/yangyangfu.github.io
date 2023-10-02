@@ -1,3 +1,17 @@
+---
+layout: inner
+position: left
+title: 'Time Series Transformers'
+date: 2023-08-31 12:00:00
+categories: development
+tags: Transformers DeepLearning NLP
+featured_image: '/img/posts/02_weathercast-1130x864-2x.png'
+project_link: 'https://github.com/YangyangFu/transformer-time-series'
+button_icon: 'github'
+button_text: 'Visit Project'
+lead_text: 'A Tensorflow library for time series forecasting using transformers.'
+---
+
 # Transformers for Time Series Forecasting
 
 This is a library implemented in Tensorflow 2.0 for time series forecasting using the transformer architecture. The transformer architecture is a powerful deep learning architecture that has been used in many NLP tasks. I am interested in exploring its potential in time series forecasting.
