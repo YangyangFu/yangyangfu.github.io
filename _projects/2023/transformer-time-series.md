@@ -10,6 +10,7 @@ project_link: 'https://github.com/YangyangFu/transformer-time-series'
 button_icon: 'github'
 button_text: 'Visit Project'
 lead_text: 'A Tensorflow library for time series forecasting using transformers.'
+permalink: /projects/2023/transformer-time-series/
 ---
 
 # Transformers for Time Series Forecasting
