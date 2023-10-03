@@ -28,6 +28,12 @@ markdown: kramdown
 plugins:
   - jekyll-paginate-v2
 
+############################
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set

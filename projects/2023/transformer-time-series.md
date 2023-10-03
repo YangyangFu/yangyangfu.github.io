@@ -1,15 +1,6 @@
 ---
 layout: inner
-position: left
 title: 'Time Series Transformers'
-date: 2023-08-31 12:00:00
-categories: development
-tags: Transformers DeepLearning NLP
-featured_image: '/img/posts/02_weathercast-1130x864-2x.png'
-project_link: 'https://github.com/YangyangFu/transformer-time-series'
-button_icon: 'github'
-button_text: 'Visit Project'
-lead_text: 'A Tensorflow library for time series forecasting using transformers.'
 permalink: /projects/2023/transformer-time-series/
 ---
 
