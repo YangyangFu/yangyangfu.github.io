@@ -1,7 +1,6 @@
 ---
 layout: inner
 title: 'Time Series Transformers'
-permalink: /projects/2023/transformer-time-series/
 ---
 
 # Transformers for Time Series Forecasting
