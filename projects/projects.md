@@ -10,7 +10,7 @@ permalink: /projects/
 In this project, I'm exploring the opportunities to fine tune and embed a small-sized multimodal models into a microcontroller to enable multimodal sensing and control of a robotic car. The goal is to build a multimodal robot that can see, hear, and speak.
 
 ### [Transformers for Time Series Forecasting](./2023/transformer-time-series.md)
-[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/YangyangFu/transformer-time-series)
+[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="10"/>](https://github.com/YangyangFu/transformer-time-series)
 
 Here I used the transformer architecture to forecast time series data. The transformer architecture is a powerful deep learning architecture that has been used in many NLP tasks. I am interested in exploring its potential in time series forecasting.
 
