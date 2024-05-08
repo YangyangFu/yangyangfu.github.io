@@ -7,12 +7,13 @@ Gem::Specification.new do |spec|
   spec.email         = ["fuyy2008@gmail.com"]
 
   spec.summary       = "Phantom Jekyll Theme"
-  spec.homepage      = "https://github.com/YangyangFu/yangyangfu.github.io/phantom"
+  spec.homepage      = "https://github.com/YangyangFu/yangyangfu.github.io"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
 
-  spec.add_runtime_dependency "jekyll", "~> 3.8"
+  #spec.add_runtime_dependency "jekyll", "~> 3.8"
+  spec.add_runtime_dependency "github-pages", "~> 231"
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 12.3"
