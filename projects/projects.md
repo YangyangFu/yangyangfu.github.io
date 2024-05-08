@@ -11,6 +11,9 @@ permalink: /projects/
 
 **Github**: [<img src="/img/github.png" />](https://github.com/YangyangFu/autonomous-driving-book)
 
+
+<img src="/img/github.png" width="50" height="50"/>
+
 ## 2023 
 
 ### XBot
