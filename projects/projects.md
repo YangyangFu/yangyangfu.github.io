@@ -9,10 +9,10 @@ permalink: /projects/
 
 ### [Autonomous Driving Book](./2024/autonomous-driving-book.md)
 
-**Github**: [<img src="/img/github.png" />](https://github.com/YangyangFu/autonomous-driving-book)
-
+**Github**: 
 
 <img src="/img/github.png" width="50" height="50"/>
+
 
 ## 2023 
 
