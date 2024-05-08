@@ -7,7 +7,7 @@ permalink: /projects/
 
 ## 2024
 
-### [Autonomous Driving Book](/projects/2024/autonomous-driving-book.md)
+### [Autonomous Driving Book](2024/autonomous-driving-book.md)
 
 **Github**: [![github](/img/github.png)](https://github.com/YangyangFu/autonomous-driving-book)
 
@@ -17,7 +17,7 @@ permalink: /projects/
 
 In this project, I'm exploring the opportunities to fine tune and embed a small-sized multimodal models into a microcontroller to enable multimodal sensing and control of a robotic car. The goal is to build a multimodal robot that can see, hear, and speak.
 
-### [Transformers for Time Series Forecasting](projects/2023/transformer-time-series.md)
+### [Transformers for Time Series Forecasting](2023/transformer-time-series.md)
 
 **Github**: [![github](/img/github.png)](https://github.com/YangyangFu/transformer-time-series)
 
