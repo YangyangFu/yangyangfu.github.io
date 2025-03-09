@@ -31,13 +31,13 @@ After temporal self-attention and spatial cross attention in each layer, the enc
 
 #### 1.1.1 Encode Layer
 
-<img src="./figs/bev_encoder_layer.drawio.png" alt="Alt text">
+<img src="./figs/bev_encoder_layer.drawio.png" alt="Alt text" width="300">
 
 ##### 1.1.1.1 Temporal Self-Attention
 The detailed calculation of the temporal self-attention is illustrated as follows. 
 The bottome mechanism is deformable attention, where the query attends to sampling points in the (K,V) map.
 
-<img src="./figs/temporal_sa.drawio.png" alt="Alt text">
+<img src="./figs/temporal_sa.drawio.png" alt="Alt text" width="300">
 
 The notions are:
 - $B$: batch size
@@ -51,7 +51,7 @@ The notions are:
 
 ##### 1.1.1.2 Spatial Cross-Attention
 
-<img src="./figs/spatial_ca.drawio.png" alt="Alt text">
+<img src="./figs/spatial_ca.drawio.png" alt="Alt text" width="300">
 
 The notations are:
 - $N_c$: number of cameras
