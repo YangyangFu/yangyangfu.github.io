@@ -14,11 +14,11 @@ The architecture from the original paper is shown here, which is hard to underst
 
 ## 1. Reorganize the architecture
 
-![bev_arch_reorg](./figs/bev_arch_reorg.drawio.png)
+<img src="./figs/bev_arch_reorg.drawio.png" alt="Alt text" height="200">
 
 ### 1.1 Encoder
 
-![bev_encoder](./figs/bev_encoder.png)
+<img src="./figs/bev_encoder.png" alt="Alt text" height="200">
 
 The encoder takes the following inputs
 - multi-camera multi-level image features as (K, V): a tuple of num_levels. Each element has shape (batch_size, num_camera, feat_h, feat_w, feat_dim), or 
@@ -31,15 +31,13 @@ After temporal self-attention and spatial cross attention in each layer, the enc
 
 #### 1.1.1 Encode Layer
 
-![layer](./figs/bev_encoder_layer.drawio.png)
+<img src="./figs/bev_encoder_layer.drawio.png" alt="Alt text" height="200">
 
 ##### 1.1.1.1 Temporal Self-Attention
 The detailed calculation of the temporal self-attention is illustrated as follows. 
 The bottome mechanism is deformable attention, where the query attends to sampling points in the (K,V) map.
 
-![sa](./figs/temporal_sa.drawio.png)
-
-<img src="./figs/temporal_sa.drawio.png" alt="Alt text" width="500" height="300">
+<img src="./figs/temporal_sa.drawio.png" alt="Alt text" height="200">
 
 The notions are:
 - $B$: batch size
@@ -53,7 +51,7 @@ The notions are:
 
 ##### 1.1.1.2 Spatial Cross-Attention
 
-![ca](./figs/spatial_ca.drawio.png)
+<img src="./figs/spatial_ca.drawio.png" alt="Alt text" height="200">
 
 The notations are:
 - $N_c$: number of cameras
