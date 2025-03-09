@@ -49,7 +49,7 @@ pagination:
   debug: false
 
   # pagination pathh
-  paginate_path: '/blog/page:num/'
+  paginate_path: '/blogs/page:num/'
 
   # The default document collection to paginate if nothing is specified ('posts' is default)
   collection: 'posts'
