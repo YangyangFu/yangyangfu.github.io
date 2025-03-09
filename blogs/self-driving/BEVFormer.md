@@ -14,11 +14,11 @@ The architecture from the original paper is shown here, which is hard to underst
 
 ## 1. Reorganize the architecture
 
-<img src="./figs/bev_arch_reorg.drawio.png" alt="Alt text" height="200">
+<img src="./figs/bev_arch_reorg.drawio.png" alt="Alt text" height="200" width='auto'>
 
 ### 1.1 Encoder
 
-<img src="./figs/bev_encoder.png" alt="Alt text" height="200">
+<img src="./figs/bev_encoder.png" alt="Alt text" height="200" width='auto'>
 
 The encoder takes the following inputs
 - multi-camera multi-level image features as (K, V): a tuple of num_levels. Each element has shape (batch_size, num_camera, feat_h, feat_w, feat_dim), or 
