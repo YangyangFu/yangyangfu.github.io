@@ -36,9 +36,6 @@ collections:
   blogs:
     output: true
     permalink: /blogs/:path/
-  posts:
-    output: true
-    permalink: /_posts/:path/
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
