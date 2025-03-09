@@ -48,11 +48,14 @@ pagination:
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
   debug: false
 
+  # pagination pathh
+  paginate_path: '/blog/page:num/'
+
   # The default document collection to paginate if nothing is specified ('posts' is default)
   collection: 'posts'
 
   # How many objects per paginated page, used to be `paginate` (default: 0, means all)
-  per_page: 3
+  per_page: 5
 
   # The permalink structure for the paginated pages (this can be any level deep)
   permalink: '/page/:num/' # Pages are index.html inside this folder (default)
@@ -63,7 +66,7 @@ pagination:
   title: ':title - page :num'
 
   # Limit how many pagenated pages to create (default: 0, means all)
-  limit: 0
+  limit: 5
   
   # Optional, defines the field that the posts should be sorted on (omit to default to 'date')
   sort_field: 'date'
