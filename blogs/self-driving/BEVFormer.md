@@ -12,11 +12,11 @@ BEVFormer is a method to fuse multi-camera images to obtain current BEV feature.
 The architecture from the original paper is shown here, which is hard to understand for a reimplementation, as many details are missed.
 ![bev_arch](./figs/bevformer.png)
 
-## Reorganize the architecture
+## 1. Reorganize the architecture
 
 ![bev_arch_reorg](./figs/bev_arch_reorg.drawio.png)
 
-### Encoder
+### 1.1 Encoder
 
 ![bev_encoder](./figs/bev_encoder.png)
 
@@ -29,11 +29,11 @@ The encoder takes the following inputs
 
 After temporal self-attention and spatial cross attention in each layer, the encoder output current fused BEV feature $BEV_t$.
 
-### Encode Layer
+#### 1.1.1 Encode Layer
 
 ![layer](./figs/bev_encoder_layer.drawio.png)
 
-#### Temporal Self-Attention
+##### 1.1.1.1 Temporal Self-Attention
 The detailed calculation of the temporal self-attention is illustrated as follows. 
 The bottome mechanism is deformable attention, where the query attends to sampling points in the (K,V) map.
 
@@ -50,7 +50,7 @@ The notions are:
 - $N_p$: number of neighbor points to be sampled for each reference point, e.g., 8
  
 
-#### Spatial Cross-Attention
+##### 1.1.1.2 Spatial Cross-Attention
 
 ![ca](./figs/spatial_ca.drawio.png)
 
@@ -60,7 +60,7 @@ The notations are:
 - $N_z$: number of neighborhood points sampled at z-axis of a BEV pillar, e.g., 4. It should be smaller than $N_p$  
 - $l$: number of query points hit on 2-D cameras after projection
    
-## Detection/Segmentation Head
+## 2. Detection/Segmentation Head
 
 The detection head is a DETR transformer decoder, which takes the encoder outputs (e.g., BEV feature from cameras) and object queries. 
 More details can be refered to original DETR paper.
