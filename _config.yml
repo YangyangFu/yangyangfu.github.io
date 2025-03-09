@@ -33,6 +33,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  blogs:
+    output: true
+    permalink: /blogs/:path/
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
@@ -106,4 +109,5 @@ nav_item:
   - { url: '/', text: 'Home' }
   - { url: '/about', text: 'About' }
   - { url: '/projects', text: 'Projects' }
+  - { url: '/blogs', text: 'Blogs' }
   - { url: '/publication', text: 'Publication' }
