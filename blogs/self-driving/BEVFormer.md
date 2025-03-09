@@ -1,3 +1,8 @@
+---
+layout: inner
+title: 'BEVFormer: How to Implement?'
+---
+
 # BEVFormer
 
 Ref: [github](https://github.com/fundamentalvision/BEVFormer)
