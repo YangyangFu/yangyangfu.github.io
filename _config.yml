@@ -36,6 +36,9 @@ collections:
   blogs:
     output: true
     permalink: /blogs/:path/
+  posts:
+    output: true
+    permalink: /_posts/:path/
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
@@ -101,7 +104,7 @@ pagination:
 footer_text: '© 2025 Yangyang Fu'
 admin_name: 'Yangyang Fu'
 google_analytics: "UA-9999999-99" # Update with your own tracking ID
-enable_contact: false
+enable_contact: true
 
 #### Phantom Navigation menu
 enable_nav: true

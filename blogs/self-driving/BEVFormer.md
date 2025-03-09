@@ -14,7 +14,7 @@ The architecture from the original paper is shown here, which is hard to underst
 
 ## 1. Reorganize the architecture
 
-<img src="./figs/bev_arch_reorg.drawio.png" alt="Alt text" height="200" width='auto'>
+<img src="./figs/bev_arch_reorg.drawio.png" alt="Alt text" height="200" width='400'>
 
 ### 1.1 Encoder
 
