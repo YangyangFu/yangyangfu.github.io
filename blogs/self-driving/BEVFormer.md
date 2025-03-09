@@ -39,6 +39,7 @@ The bottome mechanism is deformable attention, where the query attends to sampli
 
 ![sa](./figs/temporal_sa.drawio.png)
 
+<img src="./figs/temporal_sa.drawio.png" alt="Alt text" width="500" height="300">
 
 The notions are:
 - $B$: batch size
