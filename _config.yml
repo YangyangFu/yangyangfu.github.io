@@ -27,6 +27,7 @@ markdown: kramdown
 #theme: phantom # Uncomment once published to RubyGems
 plugins:
   - jekyll-paginate-v2
+  - nbjekyll
 
 ############################
 collections:
