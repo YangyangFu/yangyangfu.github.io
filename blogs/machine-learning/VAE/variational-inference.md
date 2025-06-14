@@ -72,6 +72,7 @@ $$ KL(q(z|x) || p(z|x)) = E_{q(z|x)}[\log \frac{q(z|x)}{p(z|x)}] $$
 
 Consider the function $f(x) = -\log x$, which is convex, 
 From Jensen's inequality, for a random variable $X$ and the convex function $f$, we have:
+
 $$ E[f(X)] \geq f(E[X]) $$
 
 Apply $X = \frac{p(z)}{q(z)}$:
@@ -79,6 +80,7 @@ Apply $X = \frac{p(z)}{q(z)}$:
 $$ E_{q(z)} [\log(\frac{p(z)}{q(z)})] \leq \log E_{q(z)}[\frac{p(z)}{q(z)}] = \log \int_z q(z) \frac{p(z)}{q(z)} dz = \log 1 = 0 $$
 
 Thus, KL divergence is always non-negative:
+
 $$ KL(q(z) | p(z)) = E_{q(z)}[\log \frac{q(z)}{p(z)}] = - E_{q(z)} [\log \frac{p(z)}{q(z)}] \geq 0 $$
 
 This means that **maximizing the likelihood $\log p(x)$ is equivalent to maximizing the ELBO** $\mathcal{L}(q)$, which is a lower bound of the log likelihood.
@@ -91,6 +93,7 @@ $$\log(p(x)) \ge E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z))$$
 ### How to evaluate the ELBO?
 
 The first term in ELBO is the expected reconstruction log likelihood:
+
 $$E_{q(z|x)}[\log p(x|z)]$$
 
 This is an expectation over the latent variable $z \sim q(z|x)$. 
@@ -108,6 +111,7 @@ where $\epsilon \sim N(0, I)$ is a standard Gaussian noise. This allows us to co
 (2) **Monte Carlo Approximation**:
 
 We can approximate the expectation by sampling $N$ times from $q(z\|x)$:
+
 $$E_{q(z|x)}[\log p(x|z)] \approx \frac{1}{N} \sum_{i=1}^{N} \log p(x|z_i)$$
 
 where $z_i \sim q(z\|x)$ for $i = 1, 2, \ldots, N$.
@@ -115,6 +119,7 @@ where $z_i \sim q(z\|x)$ for $i = 1, 2, \ldots, N$.
 
 ### How to evaluate the KL divergence?
 The second term in ELBO is the KL divergence:
+
 $$KL(q(z|x) || p(z)) = E_{q(z|x)}[\log \frac{q(z|x)}{p(z)}]$$
 
 This term can often be computed in closed form, depending on the choice of $q(z\|x)$ and $p(z)$.
@@ -125,16 +130,19 @@ The **variational distribution** or **encoder**, $q(z\|x)$, is a simpler distrib
 
 ### Diagonal Gaussian
 A common choice is a **diagonal Gaussian**:
+
 $$ q(z|x) = \mathcal{N}(z; \mu(x), \sigma^2(x)) $$
 
 where $\mu(x)$ and $\sigma^2(x)$ are functions (often neural networks) that output the mean and variance for each latent variable $z$ given the input $x$. 
 
 This distribution leads to analytical KL with a closed-form solution:
+
 $$ KL(\mathcal{N}(\mu, \delta^2) || \mathcal{N}(0, 1)) = \frac{1}{2} \sum_i (\mu_i^2 + \sigma_i^2 - \log(\sigma_i^2) - 1) $$
 
 where $i$ indexes the latent dimensions.
 
 This choice allows sampling via the reparameterization trick:
+
 $$ z = \mu(x) + \sigma(x) \odot \epsilon $$
 
 where $\epsilon \sim \mathcal{N}(0, I)$ is a standard normal noise vector, and $\odot$ denotes element-wise multiplication. 
@@ -197,7 +205,7 @@ $$ \hat{x} = g(z) $$
 
 The training objective is to maximize the ELBO, based on the variational trick.
 
-In practice, during training, to estimate the first term of ELBO, instead of sampling $N$ samples from $$q(z|x)$$, we can use the reparameterization trick to sample one single $z$:
+In practice, during training, to estimate the first term of ELBO, instead of sampling $N$ samples from $q(z\|x)$, we can use the reparameterization trick to sample one single $z$:
 
 $$ E_{q(z|x)}[\log p(x|z)] \approx \log p(x|z_1), z_1 \sim q(z|x) $$
 
@@ -218,17 +226,12 @@ This generative model can be used in several ways:
 
 
 For generative tasks, **how to control the sampling process?**
-- **Interpolation**: By sampling two points in the latent space and interpolating between them, we can generate smooth transitions between different data points.
+- **Interpolation**: By sampling two points in the latent space and interpolating between them, we can generate smooth transitions between different data points, where $\alpha$ is a parameter that controls the interpolation.
 
 $$ z_{\text{interp}} = \alpha z_1 + (1 - \alpha) z_2 $$
 
-where $\alpha$ is a parameter that controls the interpolation.
 - **Conditional Generation**: By conditioning the encoder on additional information (e.g., class labels), we can generate samples that belong to specific categories. This is done by modifying the encoder to take the additional information as input, allowing it to learn a conditional distribution over the latent space.
 - **VQ-VAE + Transformer**: For text generation, we can use a VQ-VAE to encode text into discrete latent codes and then use a transformer to model the relationships between these codes, allowing for coherent text generation.
-
-
-
-
 
 ## Vector Quantized Variational Autoencoder (VQ-VAE)
 
@@ -316,11 +319,11 @@ In VAEs, we maximize the ELBO:
 
 $$ \log p(x) \geq E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z)) $$
 
-This is a loose bound, especially when the variational distribution $q(z|x)$ is not a good approximation of the true posterior $p(z|x)$.
+This is a loose bound, especially when the variational distribution $q(z\|x)$ is not a good approximation of the true posterior $p(z\|x)$.
 
-IWAE improves this by drawing $K$ samples for the variational distribution $q(z|x)$ and constructing a tighter bound:
+IWAE improves this by drawing $K$ samples for the variational distribution $q(z\|x)$ and constructing a tighter bound:
 
 $$ \log p(x) \geq E_{q(z_1, z_2, \ldots, z_K | x)}[\log \frac{p(x, z_1, z_2, \ldots, z_K)}{q(z_1, z_2, \ldots, z_K | x)}] = E_{q(z_1, z_2, \ldots, z_K | x)}[\log \frac{1}{K} \sum_{i=1}^{K} \frac{p(x, z_i)}{q(z_i | x)}] $$
 
-where $z_i \sim q(z|x)$ for $i = 1, 2, \ldots, K$.
+where $z_i \sim q(z\|x)$ for $i = 1, 2, \ldots, K$.
 
