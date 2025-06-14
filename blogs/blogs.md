@@ -10,7 +10,7 @@ permalink: /blogs/
 ## Machine Learning
 
 ### VAE
-- [Variational Inference and Autoencoders](./machine-learning/VAE/variational-inference.ipynb)
+- [Variational Inference and Autoencoders](./machine-learning/VAE/variational-inference.md)
 
 ### Transformer
 
