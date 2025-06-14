@@ -53,14 +53,13 @@ $$ \log p(x) = E_{q(z|x)}[\log \frac{p(x, z)}{q(z|x)}] + E_{q(z|x)}[\log \frac{q
 The first term is the **variational evidence lower bound** (ELBO), 
 
 ```math
-\begin{align*}
+\begin{aligned}
     \mathcal{L}(q) &= E_{q(z|x)}[\log \frac{p(x, z)}{q(z|x)}]\\
     &= E_{q(z|x)}[\log \frac{p(x|z)p(z)}{q(z|x)}] \\
     &= E_{q(z|x)}[\log p(x|z)] + E_{q(z|x)}[\log \frac{p(z)}{q(z|x)}] \\
     &= E_{q(z|x)}[\log p(x|z)] - E_{q(z|x)}[\log \frac{q(z|x)}{p(z)}] \\
     &= E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z))
-
-\end{align*}
+\end{aligned}
 ```
 
 
