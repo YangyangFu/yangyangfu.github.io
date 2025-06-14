@@ -100,27 +100,28 @@ This is an expectation over the latent variable $z \sim q(z|x)$.
 (1) **Reparameterization trick**:
 We can use the reparameterization trick to sample from $q(z|x)$, which allows us to backpropagate through the sampling process. 
 For example, if $q(z|x)$ is a Gaussian distribution with mean $\mu(x)$ and variance $\sigma^2(x)$, we can sample $z$ as:
+
 $$z = \mu(x) + \sigma(x) \odot \epsilon$$
 
 where $\epsilon \sim N(0, I)$ is a standard Gaussian noise. This allows us to compute gradients with respect to the parameters of the encoder network.
 
 (2) **Monte Carlo Approximation**:
 
-We can approximate the expectation by sampling $N$ times from $q(z|x)$:
+We can approximate the expectation by sampling $N$ times from $q(z\|x)$:
 $$E_{q(z|x)}[\log p(x|z)] \approx \frac{1}{N} \sum_{i=1}^{N} \log p(x|z_i)$$
 
-where $z_i \sim q(z|x)$ for $i = 1, 2, \ldots, N$.
+where $z_i \sim q(z\|x)$ for $i = 1, 2, \ldots, N$.
 
 
 ### How to evaluate the KL divergence?
 The second term in ELBO is the KL divergence:
 $$KL(q(z|x) || p(z)) = E_{q(z|x)}[\log \frac{q(z|x)}{p(z)}]$$
 
-This term can often be computed in closed form, depending on the choice of $q(z|x)$ and $p(z)$.
+This term can often be computed in closed form, depending on the choice of $q(z\|x)$ and $p(z)$.
 
 ## Variational Distribution
 
-The **variational distribution** or **encoder** $q(z|x)$ is a simpler distribution that we can sample from. The choice of its form affects how well it approximates the true posterior $p(z|x)$.
+The **variational distribution** or **encoder**, $q(z\|x)$, is a simpler distribution that we can sample from. The choice of its form affects how well it approximates the true posterior $p(z\|x)$.
 
 ### Diagonal Gaussian
 A common choice is a **diagonal Gaussian**:
@@ -141,6 +142,7 @@ This allows gradients to flow through the sampling process, enabling backpropaga
 
 ### Mixture of Gaussians
 Another choice is a **mixture of Gaussians**:
+
 $$ q(z|x) = \sum_{k=1}^K \pi_k(x) \mathcal{N}(z; \mu_k(x), \sigma_k^2(x)) $$
 
 where $\pi_k(x)$ are the mixing coefficients, $\mu_k(x)$ and $\sigma_k^2(x)$ are the means and variances for each component, and $K$ is the number of components.
@@ -151,12 +153,14 @@ But it has no analytical KL divergence, so we need to use Monte Carlo methods to
 ### Normalizing Flows
 A more flexible approach is to use **normalizing flows**, which transform a simple distribution (like a Gaussian) into a more complex one through a series of invertible transformations.
 
-$z = f_K f_{K-1} \dots f_1(\epsilon)$, 
+$$z = f_K f_{K-1} \dots f_1(\epsilon)$$ 
 
 where $f$ is a sequence of transformations parameterized by $\theta$. 
 
 The ELBO can be computed using the change of variables formula:
+
 $$ \log p(x) = E_{q(z|x)}[\log p(x|z) + \log \det \frac{\partial f^{-1}}{\partial z}] $$
+
 This allows for complex posteriors while still being able to compute the ELBO. 
 
 ## Autoencoder 
@@ -169,12 +173,13 @@ It consists of two main components:
 
 If the encoder is not probabilistic, it simply outputs a deterministic $z = f(x)$, where $f$ is a neural network. The decoder then reconstructs the input as $\hat{x} = g(z)$, where $g$ is another neural network.
 The training objective is to minimize the reconstruction error, often using mean squared error (MSE) or cross-entropy loss:
+
 $$ \mathcal{L}_{\text{recon}}(x, \hat{x}) = || x - \hat{x} ||^2 $$
 
 Thus this traditional autoencoders
 - are not generative models, as they do not model the distribution of the data but rather learn a compressed representation.
 - have no mechanism to sample from the latent space, as it does not define a distribution over $z$.
-- latent space may be irrelevant or not sparse -> a random z often leads to garbage output.
+- latent space may be irrelevant or not sparse -> a random $z$ often leads to garbage output.
 
 
 
@@ -183,20 +188,24 @@ Thus this traditional autoencoders
 To make the autoencoder generative, we introduce a probabilistic encoder that outputs a distribution over the latent space instead of a single point.
 The encoder outputs parameters of a variational distribution $q(z|x)$, typically a diagonal Gaussian with mean $\mu(x)$ and variance $\sigma^2(x)$.
 The decoder then samples from this distribution to generate the latent variable $z$:
+
 $$ z \sim q(z|x) = \mathcal{N}(z; \mu(x), \sigma^2(x)) $$
 
 The decoder then reconstructs the input from the sampled $z$:
+
 $$ \hat{x} = g(z) $$
+
 The training objective is to maximize the ELBO, based on the variational trick.
 
-In practice, during training, to estimate the first term of ELBO, instead of sampling $N$ samples from $q(z|x)$, we can use the reparameterization trick to sample one single $z$:
+In practice, during training, to estimate the first term of ELBO, instead of sampling $N$ samples from $$q(z|x)$$, we can use the reparameterization trick to sample one single $z$:
 
 $$ E_{q(z|x)}[\log p(x|z)] \approx \log p(x|z_1), z_1 \sim q(z|x) $$
 
 Only one sample works because this is training. Training with one sample is like a stochastic gradient descent, which is a common practice in training neural networks.
 
 
-With the assumption that $x \in \mathcal{R}^D$, the decoder $p(x|z)$ is a Gaussian distribution, the likelihood becomes:
+With the assumption that $x \in \mathcal{R}^D$, the decoder $p(x\|z)$ is a Gaussian distribution, the likelihood becomes:
+
 $$ \log p(x|z) = -\frac{1}{2\delta^2} || x - g(z) ||^2 - \frac{D}{2} \log(2\pi \delta^2) $$
 
 where $\delta$ is a hyperparameter controlling the noise level in the reconstruction, usually set to 1. 
@@ -234,10 +243,13 @@ $$ \hat{x} = g(z_q) $$
 ### Varitional Distribution
 The variational distribution $q(z|x)$ is not a continuous distribution but rather a discrete set of vectors from the codebook. The encoder outputs a continuous latent representation, which is then quantized to the nearest codebook vector.
 Thus the posterior approximation $q(z_q|x)$  are defined as one-hot as follows:
+
 $$ q(z_q = e_k | x) = \begin{cases}
 1 & \text{if } e_k \text{ is the nearest codebook vector for } z_e \\
 0 & \text{otherwise}
-\end{cases} $$
+\end{cases} 
+$$
+
 This means that the encoder does not output parameters of a distribution but rather a discrete choice of which codebook vector to use. 
 We can use this distribution to bound ELBO.
 
@@ -258,27 +270,33 @@ Because of the quantization process, the latent variable after the encoder is no
 
 $$\log p(x) = \int \log p(x|z_e) p(z_e) dz_e$$
 
-Because the decoder $p(x|z)$ is trained with $z = z_q(x)$, the decoder shouldn't allocate any probability mass to p(x|z_e)$ when $z_e$ is not in the codebook once it's converged.
+Because the decoder $p(x|z)$ is trained with $z = z_q(x)$, the decoder shouldn't allocate any probability mass to $p(x|z_e)$ when $z_e$ is not in the codebook once it's converged.
 Thus we can write:
+
 $$\log p(x) \approx \sum_{z_q \in \text{codebook}} \log p(x|z_q) p(z_q) $$
 
 To maximize the above likelihodd is to maximize the ELBo. From the derivation of ELBO, we have:
+
 $$ \mathcal{L}_{ELBO} = E_{q(z_q|x)}[\log p(x|z_q)] - KL(q(z_q|x) || p(z_q)) $$
 
 The first term as a decoder loss, is equivalent to minimizing the reconstruction error $||x - \hat x||_2^2$.
+
 The second term is the KL divergence between the variational distribution and the prior distribution, which encourages the quantized latent representations to be close to the codebook vectors.
 The variation distribution $q(z_q|x)$ is a categorical distribution over the codebook vectors, and the prior distribution $p(z_q)$ is a uniform distribution over the codebook vectors.
 Thus the KL divergence can be computed as:
+
 $$ KL(q(z_q|x) || p(z_q)) = \log q(z_q=k|x) - \log p(z_q=k) = \log 1 - \log\frac{1}{K} = \log K$$
 
 which is constant. 
 
 Then to minimize ELBO loss is simplified to minimize:
+
 $$\mathcal{L}_{ELBO} = -E_{q(z_q|x)}[\log p(x|z_q)]$$ 
 
 
 ### Codebook Loss
 The codebook loss encourages the encoder outputs to be close to the codebook vectors. It is defined as:
+
 $$ \mathcal{L}_{codebook} = || z_e - e_k ||^2 $$
 
 However, due to the moving target problem while jointly training the encoder and the codebook, this loss is broken down into two parts:
@@ -295,7 +313,9 @@ The above variational autoencoders (VAEs) use a single sample from the variation
 To address this, the **Importance Weighted Autoencoder (IWAE)** uses multiple samples from the variational distribution to estimate the ELBO more accurately, which also leads a tighter bound on the log likelihood.
 
 In VAEs, we maximize the ELBO:
+
 $$ \log p(x) \geq E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z)) $$
+
 This is a loose bound, especially when the variational distribution $q(z|x)$ is not a good approximation of the true posterior $p(z|x)$.
 
 IWAE improves this by drawing $K$ samples for the variational distribution $q(z|x)$ and constructing a tighter bound:
