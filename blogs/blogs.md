@@ -5,10 +5,20 @@ permalink: /blogs/
 ---
 
 
-# 1. Blogs
+# Blogs
 
-## 1.1 Self-Driving Paper Reading and Implementation
+## Machine Learning
+
+### VAE
+- [Variational Inference and Autoencoders](./machine-learning/VAE.md)
+
+### Transformer
+
+### Diffusion
+
+### Flow Matching
+
+
+## Self-Driving Paper Reading and Implementation
 
 - [BEVFormer Detailed Analysis for Implementation](./self-driving/BEVFormer.md)
-
-## 1.2 Transformers
