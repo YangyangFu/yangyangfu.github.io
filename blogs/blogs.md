@@ -9,14 +9,7 @@ permalink: /blogs/
 
 ## Machine Learning
 
-### VAE
-- [Variational Inference and Autoencoders](./machine-learning/VAE/variational-inference.md)
-
-### Transformer
-
-### Diffusion
-
-### Flow Matching
+- [Machine Learning Blogs](./machine-learning/machine-learning.md)
 
 
 ## Self-Driving Paper Reading and Implementation
