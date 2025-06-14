@@ -21,12 +21,12 @@ Directly estimating $p(x)$ requires we have all the data in the world, which is 
 $$\log p(x) = \log \int p(x, z) dz = \log \int p(x|z) p(z) dz$$
 
 
-However, this marginal likelihood is intractable, as it requires integrating over all possible latent variables $z$.
-- even if the $p(z), p(x|z)$ are simple distributions (e.g., Gaussian), the product is often non-Gaussian and high-dimensional, making the integral difficult to compute.
-- $p(x|z)$ as the decoder is usually a complex approximator, which makes the integral even harder to compute. 
+However, this marginal likelihood is intractable, as it requires integrating over all possible latent variables $$z$$.
+- even if the $$p(z), p(x|z)$$ are simple distributions (e.g., Gaussian), the product is often non-Gaussian and high-dimensional, making the integral difficult to compute.
+- $$p(x|z)$$ as the decoder is usually a complex approximator, which makes the integral even harder to compute. 
 
-To address this, we can propose a simpler parameterized distribution $q(z|x)$ (known as **Variational Distribution**) to approximate the posterior distribution $p(z|x)$. 
-One of the goal is to find the parameters of $q(z|x)$ that minimize the difference between $q(z|x)$ and $p(z|x)$. 
+To address this, we can propose a simpler parameterized distribution $$q(z|x)$$ (known as **Variational Distribution**) to approximate the posterior distribution $$p(z|x)$$. 
+One of the goal is to find the parameters of $$q(z|x)$$ that minimize the difference between $$q(z|x)$$ and $$p(z|x)$$. 
 
 ## Variational Trick
 
