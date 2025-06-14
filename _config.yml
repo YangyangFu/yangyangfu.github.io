@@ -27,7 +27,7 @@ markdown: kramdown
 #theme: phantom # Uncomment once published to RubyGems
 plugins:
   - jekyll-paginate-v2
-  - nbjekyll
+  - jekyll-archives
 
 ############################
 collections:
@@ -37,6 +37,14 @@ collections:
   blogs:
     output: true
     permalink: /blogs/:path/
+
+## categories
+jekyll-archives:
+  enabled:
+    - categories
+  layout: inner
+  permalinks:
+    category: '/blog/:name/'
 
 # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set

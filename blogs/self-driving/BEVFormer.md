@@ -1,6 +1,7 @@
 ---
 layout: inner
 title: 'BEVFormer: How to Implement?'
+categories: [self-driving]
 ---
 
 # BEVFormer
