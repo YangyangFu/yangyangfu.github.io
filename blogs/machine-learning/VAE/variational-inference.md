@@ -1,8 +1,10 @@
 ---
+layout: inner
 title: "Variational Inference"
 date: 2025-06-14
-categories: [blogs]
+categories: [machine-learning]
 ---
+
 # Variational Inference
 
 The goal of generative models is to learn a distribution $p(x)$ (or known as **Evidence**) over the data $x$. Variational inference is a method to approximate complex distributions by transforming them into simpler ones.
