@@ -30,8 +30,8 @@ One of the goal is to find the parameters of $q(z|x)$ that minimize the differen
 
 ## Variational Trick
 
-Now we introduce a **variational distribution** $q(z|x)$ to approximate the true posterior $p(z|x)$, an easier distribution to sample from. 
-We usually reparameterize $q(z|x)$ with an encoder network.
+Now we introduce a **variational distribution** $q(z\|x)$ to approximate the true posterior $p(z\|x)$, an easier distribution to sample from. 
+We usually reparameterize $q(z\|x)$ with an encoder network.
 
 We can then rewrite the log likelihood as:
 
@@ -41,7 +41,7 @@ This holds because: $\log p(x)$ is a constant with respect to $z$, independent o
 
 $$E_{q(z|x)}[\log p(x)] = \sum_z q(z|x) \log p(x) = \log p(x) \sum_z q(z|x) = \log p(x) \times 1 = \log p(x)$$
 
-Now add and subtract $\log q(z|x)$ inside the expectation:
+Now add and subtract $\log q(z\|x)$ inside the expectation:
 
 $$\log p(x) = E_{q(z|x)}[\log \frac{p(x, z)}{q(z|x)} + \log \frac{q(z|x)}{p(z|x)}]$$
 
@@ -52,6 +52,7 @@ $$ \log p(x) = E_{q(z|x)}[\log \frac{p(x, z)}{q(z|x)}] + E_{q(z|x)}[\log \frac{q
 
 The first term is the **variational evidence lower bound** (ELBO), 
 
+```math
 \begin{align*}
     \mathcal{L}(q) &= E_{q(z|x)}[\log \frac{p(x, z)}{q(z|x)}]\\
     &= E_{q(z|x)}[\log \frac{p(x|z)p(z)}{q(z|x)}] \\
@@ -60,8 +61,10 @@ The first term is the **variational evidence lower bound** (ELBO),
     &= E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z))
 
 \end{align*}
+```
 
-The second term is the **KL divergence** between the estimated variational distribution and the true posterior distribution, which is unknown because we cannot compute $p(z|x)$ directly.
+
+The second term is the **KL divergence** between the estimated variational distribution and the true posterior distribution, which is unknown because we cannot compute $p(z\|x)$ directly.
 
 $$ KL(q(z|x) || p(z|x)) = E_{q(z|x)}[\log \frac{q(z|x)}{p(z|x)}] $$
 
@@ -92,7 +95,7 @@ The first term in ELBO is the expected reconstruction log likelihood:
 $$E_{q(z|x)}[\log p(x|z)]$$
 
 This is an expectation over the latent variable $z \sim q(z|x)$. 
-- $q(z|x)$ is often parameterized by an encoder network, which outputs the parameters of the distribution (e.g., mean and variance for Gaussian). $p(x|z)$ is a decoder distribution (e.g., Gaussian)
+- $q(z\|x)$ is often parameterized by an encoder network, which outputs the parameters of the distribution (e.g., mean and variance for Gaussian). $p(x\|z)$ is a decoder distribution (e.g., Gaussian)
 - no closed-form solution for this expectation, so we need to use sampling methods to estimate it.
 
 (1) **Reparameterization trick**:
